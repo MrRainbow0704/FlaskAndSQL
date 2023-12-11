@@ -1,0 +1,57 @@
+body {
+    width: 100svw;
+    height: 100svh;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    margin: 0 auto;
+    text-align: center;
+}
+
+main {
+    margin: 5px;
+    padding: 5px;
+}
+
+footer {
+    margin: 0 auto;
+    text-align: center;
+}
+
+#result {
+    padding: 5px;
+    background-color: black;
+    color: green;
+    border: black solid 1px;
+}
+
+form {
+    display: grid;
+}
+
+form > * {
+    margin: 0.2rem 0 ;
+}
+
+input[type=radio] {
+    margin: 0 3rem 0 0;
+}
+
+input[type=text] {
+    width: 30rem;
+}
+
+#ok {
+    background-color: lightgreen;
+    color: darkgreen;
+    border: solid 1px darkgreen;
+}
+
+#error {
+    background-color: lightcoral;
+    color: darkred;
+    border: solid 1px darkred;
+}

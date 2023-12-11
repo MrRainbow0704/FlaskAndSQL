@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<h2>SQL query</h2>
+<form action="/" method="post">
+    <span>
+        <label for="query-input">Inserisci la Query usando il linguaggio SQL (usa %s come placeholder):</label>
+        <input type="text" id="query-input" name="query-input" placeholder="Inserisci la query..." required>
+    </span>
+    <span>
+        <label for="params-input">Inserisci i parametri (separali con una virgola ',' ):</label>
+        <input type="text" id="params-input" name="params-input" placeholder="Inserisci i parametri...">
+    </span>
+    <br>
+    <label for="db-input">Scegli il database da usare:</label>
+    <span id="db-input">
+        <label for="mysql">MySQL</label>
+        <input type="radio" name="db-input" id="mysql" value="MYSQL" required>
+        <label for="sqlite">SQLite</label>
+        <input type="radio" name="db-input" id="sqlite" value="SQLITE" required>
+    </span>
+    <button type="submit">Esegui</button>
+</form>
+
+{% if status == "OK" %}
+    <p id="ok">Query eseguita con successo</p>
+{% else  %}
+    <p id="error">C'è stato un errore</p>
+{% endif %}
+{% if result %}
+    <div id="result">
+        <h2>Risultato: </h2>
+        <code>{{ result }}</code>
+    </div>
+{% endif %}
+
+{% endblock main %}
